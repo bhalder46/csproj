@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c623303da69b03c4b8382015306b52f1"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "AREA NAME", "scale": {"scheme": "category10"}, "sort": {"field": "AREA NAME", "op": "count", "order": "ascending"}, "type": "nominal"}, "tooltip": {"field": "count", "type": "quantitative"}, "x": {"field": "AREA NAME", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "params": [{"name": "interval_la", "select": {"type": "interval"}}], "title": "Distribution of LA Crime per Area", "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-c623303da69b03c4b8382015306b52f1": [{"AREA NAME": "77th Street", "count": 129814}, {"AREA NAME": "Southwest", "count": 124029}, {"AREA NAME": "N Hollywood", "count": 102987}, {"AREA NAME": "Southeast", "count": 98622}, {"AREA NAME": "Pacific", "count": 96175}, {"AREA NAME": "Central", "count": 91564}, {"AREA NAME": "Topanga", "count": 90943}, {"AREA NAME": "Van Nuys", "count": 90921}, {"AREA NAME": "Hollywood", "count": 89624}, {"AREA NAME": "Mission", "count": 88915}, {"AREA NAME": "Devonshire", "count": 88704}, {"AREA NAME": "Northeast", "count": 87014}, {"AREA NAME": "Olympic", "count": 86981}, {"AREA NAME": "Newton", "count": 86103}, {"AREA NAME": "Wilshire", "count": 81811}, {"AREA NAME": "West LA", "count": 81764}, {"AREA NAME": "Rampart", "count": 81431}, {"AREA NAME": "West Valley", "count": 80729}, {"AREA NAME": "Harbor", "count": 80030}, {"AREA NAME": "Foothill", "count": 69468}, {"AREA NAME": "Hollenbeck", "count": 65876}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

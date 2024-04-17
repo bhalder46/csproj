@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-8d330cb8642fef85ed8b51213018d094"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Community Name", "scale": {"scheme": "tableau20"}, "sort": {"field": "Community Name", "op": "count", "order": "ascending"}, "type": "nominal"}, "tooltip": [{"field": "count", "type": "quantitative"}], "x": {"field": "Community Name", "sort": "-y", "type": "nominal"}, "y": {"field": "count", "type": "quantitative"}}, "params": [{"name": "interval_chi", "select": {"type": "interval"}}], "title": "Distribution of Chicago Crime per Community", "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-8d330cb8642fef85ed8b51213018d094": [{"Community Name": "Austin", "count": 455627}, {"Community Name": "Near North Side", "count": 259504}, {"Community Name": "South Shore", "count": 242423}, {"Community Name": "Humboldt Park", "count": 228174}, {"Community Name": "Near West Side", "count": 223836}, {"Community Name": "West Town", "count": 214785}, {"Community Name": "North Lawndale", "count": 213025}, {"Community Name": "West Englewood", "count": 207643}, {"Community Name": "Auburn Gresham", "count": 207611}, {"Community Name": "Roseland", "count": 194402}, {"Community Name": "Englewood", "count": 190087}, {"Community Name": "Loop", "count": 183660}, {"Community Name": "Greater Grand Crossing", "count": 183057}, {"Community Name": "Chicago Lawn", "count": 178136}, {"Community Name": "Chatham", "count": 162511}, {"Community Name": "Logan Square", "count": 151309}, {"Community Name": "Lake View", "count": 148752}, {"Community Name": "New City", "count": 147132}, {"Community Name": "West Garfield Park", "count": 137529}, {"Community Name": "East Garfield Park", "count": 136709}, {"Community Name": "South Chicago", "count": 135142}, {"Community Name": "Belmont Cragin", "count": 134668}, {"Community Name": "South Lawndale", "count": 123563}, {"Community Name": "West Pullman", "count": 119509}, {"Community Name": "Woodlawn", "count": 117334}, {"Community Name": "Rogers Park", "count": 113780}, {"Community Name": "Lincoln Park", "count": 113525}, {"Community Name": "Uptown", "count": 107925}, {"Community Name": "Grand Boulevard", "count": 101774}, {"Community Name": "West Ridge", "count": 94579}, {"Community Name": "Portage Park", "count": 93135}, {"Community Name": "Washington Heights", "count": 87530}, {"Community Name": "Irving Park", "count": 82523}, {"Community Name": "Douglas", "count": 81845}, {"Community Name": "Washington Park", "count": 77519}, {"Community Name": "Edgewater", "count": 74127}, {"Community Name": "Lower West Side", "count": 72618}, {"Community Name": "Brighton Park", "count": 70572}, {"Community Name": "Avondale", "count": 67748}, {"Community Name": "Gage Park", "count": 67028}, {"Community Name": "Ashburn", "count": 66584}, {"Community Name": "Albany Park", "count": 65898}, {"Community Name": "Garfield Ridge", "count": 60723}, {"Community Name": "Morgan Park", "count": 58377}, {"Community Name": "Near South Side", "count": 57021}, {"Community Name": "West Lawn", "count": 54023}, {"Community Name": "Lincoln Square", "count": 52712}, {"Community Name": "South Deering", "count": 48783}, {"Community Name": "Hyde Park", "count": 47799}, {"Community Name": "Bridgeport", "count": 46812}, {"Community Name": "Dunning", "count": 45473}, {"Community Name": "Hermosa", "count": 44137}, {"Community Name": "North Center", "count": 43041}, {"Community Name": "Kenwood", "count": 42862}, {"Community Name": "Ohare", "count": 41519}, {"Community Name": "Calumet Heights", "count": 40235}, {"Community Name": "Avalon", "count": 37455}, {"Community Name": "East Side", "count": 36470}, {"Community Name": "Riverdale", "count": 33251}, {"Community Name": "Norwood Park", "count": 32034}, {"Community Name": "Mckinley Park", "count": 29776}, {"Community Name": "Pullman", "count": 29754}, {"Community Name": "Jefferson Park", "count": 29385}, {"Community Name": "Clearing", "count": 29332}, {"Community Name": "West Elsdon", "count": 28331}, {"Community Name": "Armour Square", "count": 27949}, {"Community Name": "Beverly", "count": 26627}, {"Community Name": "Archer Heights", "count": 26486}, {"Community Name": "North Park", "count": 24798}, {"Community Name": "Fuller Park", "count": 24272}, {"Community Name": "Montclare", "count": 17572}, {"Community Name": "Oakland", "count": 17151}, {"Community Name": "Hegewisch", "count": 16495}, {"Community Name": "Mount Greenwood", "count": 16412}, {"Community Name": "Forest Glen", "count": 13626}, {"Community Name": "Burnside", "count": 10950}, {"Community Name": "Edison Park", "count": 7297}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

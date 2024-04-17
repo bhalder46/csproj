@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-3f4fee9cb87dc47e79e41a7821a63b36"}, "mark": {"type": "arc"}, "encoding": {"color": {"field": "Description", "scale": {"scheme": "tableau20"}, "type": "nominal"}, "theta": {"field": "count", "type": "quantitative"}, "tooltip": [{"field": "Description", "type": "nominal"}, {"field": "count", "type": "quantitative"}]}, "params": [{"name": "interval_chi", "select": {"type": "interval"}}], "title": "Chicago Crime Types", "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-3f4fee9cb87dc47e79e41a7821a63b36": [{"Description": "SIMPLE", "count": 812745}, {"Description": "DOMESTIC BATTERY SIMPLE", "count": 625916}, {"Description": "$500 AND UNDER", "count": 567159}, {"Description": "TO VEHICLE", "count": 411406}, {"Description": "OVER $500", "count": 388350}, {"Description": "TO PROPERTY", "count": 384521}, {"Description": "AUTOMOBILE", "count": 287926}, {"Description": "FORCIBLE ENTRY", "count": 264041}, {"Description": "FROM BUILDING", "count": 257239}, {"Description": "POSS: CANNABIS 30GMS OR LESS", "count": 256843}, {"Description": "RETAIL THEFT", "count": 212604}, {"Description": "TELEPHONE THREAT", "count": 139759}, {"Description": "TO LAND", "count": 121905}, {"Description": "UNLAWFUL ENTRY", "count": 109641}, {"Description": "POSS: CRACK", "count": 101710}, {"Description": "HARASSMENT BY TELEPHONE", "count": 101197}, {"Description": "ARMED: HANDGUN", "count": 85137}, {"Description": "POSS: HEROIN(WHITE)", "count": 84842}, {"Description": "STRONGARM - NO WEAPON", "count": 83686}, {"Description": "AGGRAVATED: OTHER DANG WEAPON", "count": 83453}, {"Description": "AGGRAVATED: HANDGUN", "count": 78375}, {"Description": "OTHER", "count": 1953765}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
